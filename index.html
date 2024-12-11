@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peta Wilayah Kecamatan Tabalong</title>
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+    <style>
+      #map {
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Peta Wilayah Kecamatan Tabalong</h1>
+    <div id="map"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/shpjs/dist/shp.min.js"></script>
+    <script>
+      // Inisialisasi peta
+      var map = L.map("map").setView([-2.0833, 115.3667], 10);
+
+      // Tambahkan layer hibrida dari Google
+      var hybridLayer = L.tileLayer(
+        "https://{s}.google.com/vt/lyrs=y&x={x}&y={y}&z={z}",
+        {
+          subdomains: ["mt0", "mt1", "mt2", "mt3"], // Google Maps subdomains
+          attribution:
+            '&copy; <a href="https://www.google.com/maps">Google Maps</a>',
+          maxZoom: 20,
+        }
+      ).addTo(map);
+
+      // Tambahkan layer peta dasar
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+      }).addTo(map);
+
+      // Muat file Shapefile dari URL
+      var shapefileUrl = "Kecamatan Tabalong.zip"; // Pastikan file ini berada di direktori yang sama dengan file HTML
+      shp(shapefileUrl)
+        .then(function (geojson) {
+          // Tambahkan GeoJSON hasil konversi ke peta
+          L.geoJSON(geojson, {
+            style: function (feature) {
+              return {
+                color: "red",
+                weight: 2,
+                fillOpacity: 0,
+              };
+            },
+            onEachFeature: function (feature, layer) {
+              // Tambahkan popup dengan atribut dari file Shapefile
+              layer.bindPopup(
+                `<b>Kecamatan:</b> ${
+                  feature.properties.NAMA_KEC || "Tidak tersedia"
+                }`
+              );
+            },
+          }).addTo(map);
+        })
+        .catch(function (error) {
+          console.error("Error loading Shapefile:", error);
+        });
+
+      // Load data dari file JSON
+      fetch("data/locations.json")
+        .then((response) => response.json())
+        .then((data) => {
+          // Simpan marker dalam grup layer berdasarkan kategori
+          var layers = {};
+
+          // Loop untuk setiap lokasi
+          data.locations.forEach((location) => {
+            // Tentukan kategori
+            var category = location.category;
+
+            // Jika grup layer untuk kategori belum ada, buat
+            if (!layers[category]) {
+              layers[category] = L.layerGroup().addTo(map);
+            }
+
+            // Tambahkan marker ke grup layer
+            var marker = L.marker(location.coords).bindPopup(`
+                        <h3>${location.name}</h3>
+                        <p>${location.description}</p>
+                        <img src="${location.image}" alt="${location.name}" width="100%">
+                    `);
+            layers[category].addLayer(marker);
+          });
+
+          // Tambahkan kontrol layer
+          L.control.layers(null, layers, { collapsed: false }).addTo(map);
+        })
+        .catch((error) => console.error("Error loading JSON:", error));
+    </script>
+  </body>
+</html>

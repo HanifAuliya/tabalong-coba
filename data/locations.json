@@ -1,0 +1,102 @@
+{
+  "locations": [
+    {
+      "name": "Peternakan A",
+      "coords": [-2.1, 115.3],
+      "category": "Peternakan",
+      "description": "Lokasi peternakan sapi yang menghasilkan daging berkualitas tinggi.",
+      "image": "images/peternakan.jpg"
+    },
+    {
+      "name": "Perikanan B",
+      "coords": [-2.2, 115.4],
+      "category": "Perikanan",
+      "description": "Tambak ikan air tawar dengan hasil panen melimpah.",
+      "image": "images/perikanan.jpg"
+    },
+    {
+      "name": "Perkebunan C",
+      "coords": [-2.0, 115.5],
+      "category": "Perkebunan",
+      "description": "Perkebunan kelapa sawit terbesar di wilayah ini.",
+      "image": "images/perkebunan.jpg"
+    },
+    {
+      "name": "Pariwisata D",
+      "coords": [-2.3, 115.2],
+      "category": "Pariwisata",
+      "description": "Destinasi wisata dengan pemandangan alam yang indah.",
+      "image": "images/pariwisata.jpg"
+    },
+    {
+      "name": "Pariwisata E",
+      "coords": [-2.3, 115.2],
+      "category": "Pariwisata",
+      "description": "Destinasi wisata dengan pemandangan alam yang indah.",
+      "image": "images/pariwisata.jpg"
+    },
+    {
+      "name": "Pengembangan Ternak Sapi",
+      "coords": [-2.070638621225953, 115.36697843112051],
+      "category": "Peternakan",
+      "description": "Jumlah produksi Daging sapi pada tahun 2024 adalah 608.440 Kg",
+      "agency": "Disbunnak",
+      "additional_info": "Kambitin Raya Kec. Tanjung",
+      "image": "ternak-sapi.jpg"
+    },
+    {
+      "name": "Pengembangan Ternak Kambing",
+      "coords": [-1.9110278, 115.5688958],
+      "category": "Peternakan",
+      "description": "Jumlah produksi daging kambing pada tahun 2024 83.377 Kg",
+      "agency": "Disbunnak",
+      "additional_info": "Simpung Layung, Kec. Uya",
+      "image": "ternak-kambing.jpg"
+    },
+    {
+      "name": "Pengembangan Ternak Unggas",
+      "coords": [-2.323333, 115.291944],
+      "category": "Peternakan",
+      "description": "Unggas yang dipelihara: Itik MA (620 ekor) dan Itik Alabio (220 ekor)",
+      "agency": "Disbunnak",
+      "additional_info": "Hariang, Kec. Banua Lawas",
+      "image": "ternak-unggas.jpg"
+    },
+    {
+      "name": "Kopi Robusta",
+      "coords": [-1.8346, 115.6071],
+      "category": "Perkebunan",
+      "description": "Kopi Robusta memiliki luas lahan 312,85 Ha dengan luas lahan produksi 165,95 sehingga menghasilkan produksi 144,21 ton. Produksi setiap hektarnya adalah 869,00 kg. Memproduksi 10 Kg/bulan kopi bubuk robusta. Dikemas 80 gram, dijual Rp.20.000/bungkus.",
+      "agency": "Disbunnak, DKPPTPH",
+      "additional_info": "Kelompok Tani Gunung Batuah, Desa Santu’un, Kecamatan Muara Uya",
+      "image": "kopi-robusta.jpg"
+    },
+    {
+      "name": "Tiung Tanjung",
+      "coords": [-2.222977, 115.30835],
+      "category": "Perkebunan",
+      "description": "Tiung Tanjung merupakan produk endemik dari Kabupaten Tabalong dengan total luas lahan produksi 99,1 Ha. Produksi cabai tiung tanjung didukung oleh masyarakat dengan nilai produktivitas 100 kg/Ha.",
+      "agency": "DKPPTPH",
+      "additional_info": "Banyu Tajun",
+      "image": "tiung-tanjung.jpg"
+    },
+    {
+      "name": "Batik Tabalong",
+      "coords": [-2.016, 115.5],
+      "category": "Perdagangan",
+      "description": "Batik Tabalong adalah karya seni tekstil tradisional yang berasal dari daerah Tabalong, Kalimantan Selatan, Indonesia. Menggabungkan motif khas seperti Jebang/Tameng/Telabang, Batik Langsat, dan Batik Gigi Haruan. Produk ini merefleksikan budaya dan keindahan alam Tabalong.",
+      "agency": "Disperindag",
+      "additional_info": "Jl. Permata Indah, Kelurahan Pembataan, Kecamatan Murung Pudak",
+      "image": "batik-tabalong.jpg"
+    },
+    {
+      "name": "Kacang Sate",
+      "coords": [-2.2888632, 115.294207],
+      "category": "Perdagangan",
+      "description": "Kacang Sate Khas Tabalong adalah camilan lezat dengan aroma sate itik dan rasa manis, gurih, serta beraroma asap khas. Produk ini menggambarkan kekayaan kuliner lokal dan dibuat dengan bahan berkualitas tinggi serta teknik tradisional.",
+      "agency": "Disperindag",
+      "additional_info": "Jl. Jend. Basuki Rahmat Rt. 03, Kelurahan Agung, Kecamatan Tanjung",
+      "image": "kacang-sate.jpg"
+    }
+  ]
+}
